@@ -1,0 +1,16 @@
+<div class="users">
+  <%= case length(@users) do %>
+    <% 0 -> %>
+      <p><%= no_users()%></p>   
+    <% _ -> %>
+      <h1>List of users</h1>
+      <%= for user <- @users do %>
+        <div class="profile">
+          <p>
+            <%= user.username %> con el email <%= user.email %>
+            <%= link "ir al perfil",to: user_path(@conn, :show, user.id)%>
+          </p>
+        </div>
+      <% end %>
+  <%end%>
+</div>

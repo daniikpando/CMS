@@ -1,0 +1,9 @@
+<div class="user">
+  <h1><%= @user.username %></h1>
+  <p> <%= @user.email %> </p>
+</div>
+<div class="return">
+  <p>
+    <%= link("Show all", to: user_path(@conn, :index) ) %>
+  </p>
+</div>
